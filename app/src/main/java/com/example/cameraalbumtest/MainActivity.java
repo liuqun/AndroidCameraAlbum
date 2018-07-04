@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 Notification notification = notificationBuilder.build();
                 NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                 if (manager != null) {
-                    manager.notify(1, notification);
+                    manager.notify(NotificationActivity.ID, notification);
                 }
             }
         });
