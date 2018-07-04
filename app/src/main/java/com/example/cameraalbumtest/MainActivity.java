@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -83,12 +84,15 @@ public class MainActivity extends AppCompatActivity {
         sendNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 0, intent, 0);
                 NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(MainActivity.this);
                 notificationBuilder.setContentTitle("Notification Title");
                 notificationBuilder.setContentText("Detail");
                 notificationBuilder.setWhen(System.currentTimeMillis());
                 notificationBuilder.setSmallIcon(R.mipmap.ic_launcher);
                 notificationBuilder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+                notificationBuilder.setContentIntent(pendingIntent);
                 notificationBuilder.setDefaults(NotificationCompat.DEFAULT_ALL);
                 Notification notification = notificationBuilder.build();
                 NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
