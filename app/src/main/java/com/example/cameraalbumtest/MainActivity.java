@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 notificationBuilder.setWhen(System.currentTimeMillis());
                 notificationBuilder.setSmallIcon(R.mipmap.ic_launcher);
                 notificationBuilder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+                notificationBuilder.setDefaults(NotificationCompat.DEFAULT_ALL);
                 Notification notification = notificationBuilder.build();
                 NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                 if (manager != null) {
