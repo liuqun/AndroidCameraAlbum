@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CameraAlbumTest</string>
+    <string name="botton_text_send_notice">Send notice</string>
 </resources>

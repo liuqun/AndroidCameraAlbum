@@ -16,6 +16,12 @@
         android:layout_height="wrap_content"
         android:text="Choose From Album" />
 
+    <Button
+        android:id="@+id/send_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/botton_text_send_notice" />
+
     <ImageView
         android:id="@+id/picture"
         android:layout_width="wrap_content"
